@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import "./App.css";
+import Heading from "./componants/Heading";
+// import Heading2 from "./componants/Heading";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [type, setType] = useState("para");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading head={"React Is easy"} type={type} />
+      <button
+        onClick={() => {
+          setType("heading");
+        }}
+      >
+        Submit h1
+      </button>
+      <button
+        onClick={() => {
+          setType("heading2");
+        }}
+      >
+        Submit h2
+      </button>
+      <button
+        onClick={() => {
+          setType("heading3");
+        }}
+      >
+        Submit h2
+      </button>
     </div>
   );
 }
-
-export default App;
